@@ -1,0 +1,16 @@
+{
+    "name": "@barfittc/translations",
+    "version": "0.1.8",
+    "main": "index.ts",
+    "private": false,
+    "scripts": {
+    },
+    "dependencies": {
+        "vue": "^3.2.0"
+    },
+    "devDependencies": {
+    },
+    "publishConfig": {
+      "access": "public"
+    }
+}
