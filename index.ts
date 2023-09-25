@@ -7,6 +7,7 @@ import { reactive, inject } from 'vue'
 export interface TranslationState {
     toString:()=>string
     value:string
+    lookup:string
     args:any[]
 }
 
@@ -116,7 +117,7 @@ export function addTranslations<TMap extends {}, Translations extends { [lang: s
 
                     // retranslate all the strings
                     for (const key of Object.keys(translatedRefs)) {
-                        translatedRefs[key].value = this.translateFromLanguage(language, key, translatedRefs[key].args);
+                        translatedRefs[key].value = this.translateFromLanguage(language, translatedRefs[key].lookup, translatedRefs[key].args);
                     }
                 },
                 translate(lookup, ...args) {
@@ -127,6 +128,7 @@ export function addTranslations<TMap extends {}, Translations extends { [lang: s
                         translatedRefs[key] = reactive<TranslationState>({
                             value: this.translateFromLanguage(this.language, lookup, args),
                             args: args,
+                            lookup: lookup,
                             toString() {
                                 return this.value;
                             },
