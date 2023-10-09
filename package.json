@@ -1,6 +1,6 @@
 {
     "name": "@barfittc/translations",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "main": "index.ts",
     "private": false,
     "scripts": {
